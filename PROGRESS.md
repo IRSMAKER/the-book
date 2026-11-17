@@ -17,7 +17,7 @@ catalogues them, gives each a cover page, and explains the shared method.
 | 8 | Add PWA, icons, OG image, robots, sitemap, 404 | done |
 | 9 | Build, lint, browser-test every route, and fix defects | done |
 | 10 | Create the public GitHub repo and deploy to Vercel | done |
-| 11 | Verify the live site and record the final status | in progress |
+| 11 | Verify the live site and record the final status | done |
 
 ## Decisions
 
@@ -75,4 +75,27 @@ Every canonical URL, sitemap entry, robot directive, and citation uses the assig
 
 ### Live deployment
 
-Pending the final post-deploy pass.
+| Check | Result |
+|---|---|
+| Public access | `https://the-book-sage.vercel.app` returns 200 without auth |
+| Routes | all six pages 200; unknown volume 404 |
+| Assets | manifest, service worker, icon, OG image, robots, sitemap all 200 |
+| Canonical URLs | every page points at `the-book-sage.vercel.app` |
+| Social cards | each volume has its own `og:title` and `twitter:title` |
+| Old domain | no `the-book.vercel.app` string remains in the HTML |
+| External study | real click opens `salah-research.vercel.app` in a popup and leaves The Book in place |
+| Service worker | registered and active |
+| Console | 0 errors |
+| Overflow | 0 at desktop width |
+| Lighthouse | Accessibility 100 · Best practices 100 · SEO 100 on home, library, and a volume page |
+| Accessibility audit | no failing audits |
+
+## Blocked / next
+
+- **Automatic deploys are not connected.** `vercel git connect https://github.com/IRSMAKER/the-book -y`
+  fails with “Make sure there aren't any typos and that you have access to the repository.”
+  The Vercel GitHub app needs to be authorised for `IRSMAKER/the-book` in the Vercel Git
+  settings. Until then, deploys are run with `npx vercel --prod`.
+- **Optional:** add a small “The Book” backlink to the header or footer of The Standing and
+  The Zakāh, so a reader inside a volume can return to the shelf. This would require a
+  redeploy of both existing apps; it has not been done without confirmation.
