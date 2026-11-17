@@ -25,7 +25,7 @@ const amiri = Amiri({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://the-book.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://the-book-sage.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

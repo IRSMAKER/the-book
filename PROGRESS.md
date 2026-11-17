@@ -15,9 +15,9 @@ catalogues them, gives each a cover page, and explains the shared method.
 | 6 | Build the per-study cover pages with external entry links | done |
 | 7 | Build the method page and the about/citation page | done |
 | 8 | Add PWA, icons, OG image, robots, sitemap, 404 | done |
-| 9 | Build, lint, browser-test every route, and fix defects | in progress |
-| 10 | Create the public GitHub repo and deploy to Vercel | pending |
-| 11 | Verify the live site and record the final status | pending |
+| 9 | Build, lint, browser-test every route, and fix defects | done |
+| 10 | Create the public GitHub repo and deploy to Vercel | done |
+| 11 | Verify the live site and record the final status | in progress |
 
 ## Decisions
 
@@ -46,11 +46,33 @@ catalogues them, gives each a cover page, and explains the shared method.
 
 | Item | URL |
 |---|---|
-| The Book | https://the-book.vercel.app |
+| The Book | https://the-book-sage.vercel.app |
 | The Standing (S-L-W) | https://salah-research.vercel.app |
 | The Zakāh (Z-K-W) | https://zakah-research.vercel.app |
 | Repository | https://github.com/IRSMAKER/the-book |
 
+`the-book.vercel.app` was already taken, so Vercel assigned `the-book-sage.vercel.app`.
+Every canonical URL, sitemap entry, robot directive, and citation uses the assigned domain.
+
 ## Verification log
 
-To be filled after the build and browser pass.
+### Local production build
+
+| Check | Result |
+|---|---|
+| Build | clean, 13 routes |
+| Lint | clean, 0 errors, 0 warnings |
+| Routes | `/`, `/library`, `/method`, `/about`, `/studies/salah`, `/studies/zakah` all 200 |
+| Unknown volume | `/studies/nope` renders the custom 404 |
+| Verse counts | 108 + 56 = 164; 118 + 59 = 177; 42 + 20 = 62 |
+| Fit totals | 105 + 56 = 161 direct; 3 + 0 = 3 nuances; 0 contradictions |
+| External study links | verified with a real click: opens `salah-research.vercel.app` in a new tab and leaves The Book in place |
+| Overflow | 0 at 1440 px and 390 px |
+| Console | 0 errors in production |
+| Lighthouse | Accessibility 100 · Best practices 100 · SEO 100 on all six routes |
+| Accessibility audit | no failing audits |
+| Assets | manifest, service worker, OG image, robots, sitemap all serve |
+
+### Live deployment
+
+Pending the final post-deploy pass.

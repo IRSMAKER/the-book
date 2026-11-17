@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { publishedStudies } from "@/data/studies";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://the-book.vercel.app";
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://the-book-sage.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/library", "/method", "/about"];

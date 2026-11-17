@@ -20,7 +20,7 @@ The studies themselves live at:
 - **The Standing** — <https://salah-research.vercel.app>
 - **The Zakāh** — <https://zakah-research.vercel.app>
 
-The default site URL is `https://the-book.vercel.app`, overridable with `NEXT_PUBLIC_SITE_URL`.
+The default site URL is `https://the-book-sage.vercel.app`, overridable with `NEXT_PUBLIC_SITE_URL`.
 
 ## Design rule
 

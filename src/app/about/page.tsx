@@ -195,7 +195,7 @@ export default function AboutPage() {
             <p className="text-sm leading-relaxed text-muted">
               Idrees, Muhammad. <em>The Book: A Library of Quranic Studies</em>. 2026. Web.{" "}
               <span className="font-mono text-[0.78rem] text-ink">
-                https://the-book.vercel.app
+                https://the-book-sage.vercel.app
               </span>
             </p>
             <p className="mt-3 text-[0.76rem] leading-relaxed text-faint">
